@@ -15,6 +15,7 @@ export default function Login() {
 
                 <input 
                     placeholder="Password"
+                    type="password"
                     className="bg-zinc-600 border border-zinc-400 rounded-md text-white p-1 text-sm w-full h-10"
                 >
                 </input>
@@ -25,7 +26,7 @@ export default function Login() {
 
                 <div>
                     <span className="text-zinc-400">Ainda não tem conta?</span>
-                    <a href="/" className="text-white pl-1">Criar Conta</a>
+                    <a href="/register" className="text-white pl-1">Criar Conta</a>
                 </div>
                   
             </div>
