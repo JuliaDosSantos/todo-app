@@ -22,7 +22,7 @@ export default function Login() {
 
                 <a href="/" className="text-white">Esqueci minha senha</a>
 
-                <button className="text-white bg-zinc-700 rounded-lg p-1 w-full h-10">Login</button>
+                <button className="text-white bg-zinc-700 rounded-lg p-1 w-full h-10 hover:bg-zinc-500 transition-all">Login</button>
 
                 <div>
                     <span className="text-zinc-400">Ainda não tem conta?</span>

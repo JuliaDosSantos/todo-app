@@ -33,7 +33,7 @@ export default function Register(){
                     >
                 </input>
 
-                <button className="bg-zinc-700 text-white rounded-lg p-1 w-full h-10">Cadastrar</button>
+                <button className="bg-zinc-700 text-white rounded-lg p-1 w-full h-10 hover:bg-zinc-500 transition-all">Cadastrar</button>
 
                 <div>
                     <span className="text-zinc-400">Já tem uma conta?</span>

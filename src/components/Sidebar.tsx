@@ -16,12 +16,12 @@ export default function Sidebar() {
 
                 <div className="hover:text-zinc-100 flex gap-2">
                     <SquarePen size={22}/>
-                    <a href="">Nova tarefa</a>
+                    <a href="/newtask">Nova tarefa</a>
                 </div>
 
                 <div className="hover:text-zinc-100 flex gap-2">
                     <CircleCheckBig size={22}/>
-                    <a href="">Tarefas concluídas</a>
+                    <a href="/consultcompletedtasks">Tarefas concluídas</a>
                 </div>
 
                 <div className="hover:text-zinc-100 flex gap-2">

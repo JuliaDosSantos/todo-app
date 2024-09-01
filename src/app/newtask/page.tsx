@@ -13,7 +13,7 @@ export default function NewTask() {
     const [filteredOptions, setFilteredOptions] = useState(options);
     const [inputValue, setInputValue] = useState('');
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e : any) => {
         const value = e.target.value;
         setInputValue(value);
         setFilteredOptions(
@@ -23,7 +23,7 @@ export default function NewTask() {
         );
     }
 
-    const handleOptionClick = (option) => {
+    const handleOptionClick = (option : string) => {
         setSelectedOption(option);
         setInputValue(option);
         setIsOpen(false);
@@ -87,13 +87,13 @@ export default function NewTask() {
                     </textarea>
 
                     <div className="flex items-center gap-2 w-full">
-                        <input type="checkbox" className="w-4 h-4 accent-gray-400"/>
+                        <input type="checkbox" className="w-4 h-4 accent-gray-400 hover:cursor-pointer"/>
                         <label className="text-zinc-300">Finalizada</label>
                     </div>
                     
                     <div className="flex gap-3 justify-between w-full">
-                        <button className="text-white bg-zinc-700 rounded-lg w-full h-10">Salvar</button>
-                        <button className="text-white bg-zinc-700 rounded-lg w-full h-10">Cancelar</button>
+                        <button className="text-white bg-zinc-700 rounded-lg w-full h-10 hover:bg-zinc-500 transition-all">Salvar</button>
+                        <button className="text-white bg-zinc-700 rounded-lg w-full h-10 hover:bg-zinc-500 transition-all">Cancelar</button>
                     </div>
                 </div>
             </div>
