@@ -1,5 +1,11 @@
+"use client"
+
 import CardTask from "@/components/CardTask";
 import Sidebar from "@/components/Sidebar";
+import { Pie} from "react-chartjs-2";
+import { Chart as Chart35, Title, Tooltip, Legend, ArcElement } from 'chart.js';
+
+Chart35.register(Title, Tooltip, Legend, ArcElement);
 
 export default function Home() {
 
@@ -30,12 +36,78 @@ export default function Home() {
         }
     ]
 
+    const data = {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [
+            {
+                label: 'My First Dataset',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    '#FF6384', // Red
+                    '#36A2EB', // Blue
+                    '#FFCE56', // Yellow
+                    '#4BC0C0', // Green
+                    '#9966FF', // Purple
+                    '#FF9F40', // Orange
+                ],
+                borderColor: [
+                    '#FF6384', // Red
+                    '#36A2EB', // Blue
+                    '#FFCE56', // Yellow
+                    '#4BC0C0', // Green
+                    '#9966FF', // Purple
+                    '#FF9F40', // Orange
+                ],
+                borderWidth: 1,
+            },
+        ],
+    };
+
+    const options = {
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#ffffff', // Change color of legend text
+                },
+            },
+            tooltip: {
+                bodyColor: '#ffffff', // Change color of tooltip text
+                titleColor: '#ffffff', // Change color of tooltip title
+            },
+            title: {
+                display: true,
+                text: 'Tarefas Concluídas',
+                color: '#ffffff', // Change color of title text
+            },
+        },
+    };
+
+    const options2 = {
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#ffffff', // Change color of legend text
+                },
+            },
+            tooltip: {
+                bodyColor: '#ffffff', // Change color of tooltip text
+                titleColor: '#ffffff', // Change color of tooltip title
+            },
+            title: {
+                display: true,
+                text: 'Tarefas Futuras',
+                color: '#ffffff', // Change color of title text
+            },
+        },
+    };
+    
+
     return (
         <div className="h-screen bg-zinc-800 flex">
             
             <Sidebar/>
            
-            <div className="flex-1 p-10 pt-20 flex flex-col gap-10 items-center mr-10">
+            <div className="flex-1 p-10 pt-20 flex flex-col gap-10 items-center overflow-y-auto">
                 <div className="flex gap-5 flex-wrap">
                     <button className="bg-zinc-500 w-52 p-5 hover:bg-zinc-300 transition-colors font-bold rounded-xl">Hoje</button>
                     <button className="bg-zinc-500 w-52 p-5 hover:bg-zinc-300 transition-colors font-bold rounded-xl">Semana</button>
@@ -49,11 +121,16 @@ export default function Home() {
                     ))}
                 </div>
 
-                <div>
-                    <h1>grafico</h1>
+                <div className="flex flex-wrap gap-x-1">
+                    <div className="w-full max-w-xs mx-auto p-5 bg-zinc-500 rounded-xl shadow-md">
+                        <Pie data={data} options={options}/>
+                    </div>
+
+                    <div className="w-full max-w-xs mx-auto p-5 bg-zinc-500 rounded-xl shadow-md">
+                        <Pie data={data} options={options2}/>
+                    </div>
                 </div>
             </div>
-        
         </div>
     );
 }
